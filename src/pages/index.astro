@@ -1,7 +1,32 @@
 ---
+import LanguageSkill from '../components/LanguageSkill.astro';
+import PostCard from '../components/PostCard.astro';
 import Layout from '../layouts/Layout.astro';
+import {Content as MarkdownIndex} from '../components/index.mdx'
+
+const posts = await Astro.glob('./posts/**/*.mdx');
+
 ---
 
-<Layout title="Welcome to Astro.">
-	
+<Layout title="TraceL's blog">
+	<div class="flex flex-col items-center">
+        <article class="prose xl:prose-md prose-invert">
+            <MarkdownIndex />
+            <h2>Languages</h2>
+            <ul class="not-prose flex flex-col gap-y-4">
+                <LanguageSkill lang="Python" skill="w-[95%]" />
+                <LanguageSkill lang="JavaScript" skill="w-[80%]" />
+                <LanguageSkill lang="Java" skill="w-[80%]" />
+                <LanguageSkill lang="Arduino" skill="w-[70%]" />
+                <LanguageSkill lang="C" skill="w-[65%]" />
+                <LanguageSkill lang="Rust" skill="w-[5%]" />
+            </ul>
+            <h2>Posts</h2>
+            <div class="flex flex-nowrap overflow-scroll h-36 not-prose gap-4">
+                {posts.map((post) => (
+                    <PostCard title={post.frontmatter.title} description={post.frontmatter.description} link={post.url} date={post.frontmatter.date}/>
+                ))}
+            </div>
+        </article>
+    </div>
 </Layout>

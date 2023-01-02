@@ -1,0 +1,18 @@
+---
+type Props = {
+    title: string;
+    description: string;
+    date: string;
+    link?: string;
+}
+
+const { title, description, link, date } = Astro.props
+---
+
+<a href={link} class="flex items-center justify-center rounded-xl w-72 h-36 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-xl flex-shrink-0">
+    <div class="w-[97%] h-[95%] bg-zinc-900 rounded-xl flex flex-col px-4 py-2 opacity-95 justify-between">
+        <h3 class="text-xl font-bold tracking-tighter">{title}</h3>
+        <p class="text-ellipsis overflow-clip leading-tight">{description}</p>
+        <p class="text-sm tracking-wide font-light">{date}</p>
+    </div>
+</a>

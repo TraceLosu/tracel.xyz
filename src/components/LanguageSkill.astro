@@ -1,0 +1,17 @@
+---
+type Props = {
+    lang: string;
+    skill: string;
+};
+
+const { lang, skill } = Astro.props;
+---
+
+<li class="not-prose">
+    <div class="w-fit">{lang}</div>
+    <div class="float-left w-1/2 h-3 bg-zinc-900 rounded-xl mt-2">
+        <div class={`rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-3 ${skill}`}>
+
+        </div>
+    </div>
+</li>

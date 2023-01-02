@@ -1,0 +1,12 @@
+---
+---
+
+<script>
+    import createFirebaseApp from "../utils/firebaseClient";
+    import { getPerformance } from "firebase/performance";
+    import { getAnalytics } from "firebase/analytics";
+
+    const app = createFirebaseApp();
+    const perf = getPerformance(app);
+    const analytics = getAnalytics(app);
+</script>
