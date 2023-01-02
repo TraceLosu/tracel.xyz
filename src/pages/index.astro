@@ -22,7 +22,7 @@ const posts = await Astro.glob('./posts/**/*.mdx');
                 <LanguageSkill lang="Rust" skill="w-[5%]" />
             </ul>
             <h2>Posts</h2>
-            <div class="flex flex-nowrap overflow-scroll h-36 not-prose gap-4">
+            <div class="flex flex-nowrap items-center overflow-scroll h-40 not-prose gap-4">
                 {posts.map((post) => (
                     <PostCard title={post.frontmatter.title} description={post.frontmatter.description} link={post.url} date={post.frontmatter.date}/>
                 ))}

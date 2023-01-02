@@ -2,18 +2,12 @@
 import { Icon } from "astro-icon";
 ---
 
-<header class="flex flex-row justify-between items-center w-full min-h-[8rem] mb-16">
+<header class="flex flex-col sm:flex-row justify-evenly sm:justify-between items-center w-full min-h-[8rem] mb-16">
     <a href="/" class="text-4xl text-white font-bold tracking-tight mx-6">tracel.xyz</a>
     <div class="flex flex-row justify-center gap-4 mx-6">
         <button id="discord-social">
             <Icon
                 name="simple-icons:discord"
-                class="text-white hover:text-stone-300 w-8 h-8 transition ease-in-out"
-            />
-        </button>
-        <button id="twitter-social">
-            <Icon
-                name="simple-icons:twitter"
                 class="text-white hover:text-stone-300 w-8 h-8 transition ease-in-out"
             />
         </button>
@@ -23,6 +17,12 @@ import { Icon } from "astro-icon";
                 class="text-white hover:text-stone-300 w-8 h-8 transition ease-in-out"
             />
         </a>
+        <button id="twitter-social">
+            <Icon
+                name="simple-icons:twitter"
+                class="text-white hover:text-stone-300 w-8 h-8 transition ease-in-out"
+            />
+        </button>
     </div>
     <div
         id="discord-tooltip"
